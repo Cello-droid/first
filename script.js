@@ -228,10 +228,8 @@ document.getElementById('btnCalculate').addEventListener('click', () => {
     const examAvg = getAvg(examScores);
     const mcoAvg = getAvg(mcoScores);
 
-    // Weighted Formula: (Quiz * 0.2) + (Exam * 0.3) + (MCO * 0.5)
     const finalGrade = (quizAvg * 0.2) + (examAvg * 0.3) + (mcoAvg * 0.5);
     
-    // Display Results
     document.getElementById('finalGrade').innerText = finalGrade.toFixed(2);
     document.getElementById('gradeLetter').innerText = getGradeEquivalent(finalGrade);
 });

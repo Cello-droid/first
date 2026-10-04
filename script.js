@@ -40,7 +40,6 @@ function activity6() {
     for (let i = 1; i <= 5; i++) console.log("Loop: " + i);
 }
 
-// Activity 7 Event Listener
 document.addEventListener('DOMContentLoaded', () => {
     const btn7 = document.getElementById("activity7Btn");
     if (btn7) {

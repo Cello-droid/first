@@ -13,6 +13,11 @@ function activity2() {
     let age = 21;
     alert(`My name is ${name}, I am ${age} years old.`);
 }
+function activity2() {
+    let name = "Nicello Cham Jr";
+    let age = 21;
+    alert(`My name is ${name}, I am ${age} years old.`);
+}
 
 function activity3() {
     let num1 = Number(prompt("Enter first number:"));

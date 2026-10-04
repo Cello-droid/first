@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Nicello | BSCS 2C</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="bg-circles">
+    <div class="circle c1"></div>
+    <div class="circle c2"></div>
+</div>
+
+<nav>
+    <div class="nav-links">
+        <button onclick="showSection('home')">Home</button>
+        <button onclick="showSection('activities')">Activities</button>
+        <button onclick="showSection('Exercise4')">Grade Calculator</button>
+    </div>
+</nav>
+
+<section id="home" class="section active">
+    <div class="glass-card">
+        <h1>Hi! I'm Nicello Cham</h1>
+        <p>BSCS 2C | Student Portfolio</p>
+        <button style="width:200px; margin-top:20px;" onclick="showSection('activities')">
+            Explore Activities
+        </button>
+    </div>
+</section>
+
+<section id="activities" class="section">
+    <div class="glass-card">
+        <h2>JS Activities</h2>
+        <div class="activity-grid">
+            <button onclick="activity1()">Activity 1</button>
+            <button onclick="activity2()">Activity 2</button>
+            <button onclick="activity3()">Activity 3</button>
+            <button onclick="activity4()">Activity 4</button>
+            <button onclick="activity5()">Activity 5</button>
+            <button onclick="activity6()">Activity 6</button>
+            <button id="activity7Btn">Activity 7</button>
+            <button onclick="activity8()">Activity 8 (Green)</button>
+            <button onclick="activity9()">Activity 9 (Dark)</button>
+            <button onclick="activity10(document.getElementById('output'))">Activity 10</button>
+            <button onclick="activity11(document.getElementById('output'))">Activity 11 Clear</button>
+            <button onclick="activity12()">Activity 12</button>
+            <button onclick="activity13()">Activity 13</button>
+            <button onclick="activity14(document.getElementById('output'))">Activity 14</button>
+            <button onclick="activity15(document.getElementById('output'))" class="full-width">Activity 15</button>
+        </div>
+        <div id="output">Output will appear here...</div>
+    </div>
+</section>
+
+<section id="Exercise4" class="section">
+    <div class="glass-card dashboard">
+        <div class="icon-header">📊</div>
+        <h2>Student Grade Calculator</h2>
+        <p>Enter scores between 0-100</p>
+        
+        <div class="input-container">
+         <div class="input-group">
+    <label>Add Quiz Scores (20%):</label>
+    <div style="display: flex; gap: 10px; margin-bottom: 5px;">
+        <input type="number" id="quizInput1" min="0" max="100" placeholder="Q1">
+        <button id="btnAddQuiz1" class="quiz-btn">Add</button>
+        
+        <input type="number" id="quizInput2" min="0" max="100" placeholder="Q2">
+        <button id="btnAddQuiz2" class="quiz-btn">Add</button>
+        
+        <input type="number" id="quizInput3" min="0" max="100" placeholder="Q3">
+        <button id="btnAddQuiz3" class="quiz-btn">Add</button>
+    </div>
+    <div class="score-list">Quizzes: <span id="quizDisplay">None</span></div>
+</div>
+            
+           <div class="input-group">
+    <label>Add Exam Scores (30%):</label>
+    <div style="display: flex; gap: 10px; margin-bottom: 5px; flex-wrap: wrap;">
+        <input type="number" id="examInput1" min="0" max="100" placeholder="Exam 1">
+        <button id="btnAddExam1" style="width: auto; padding: 0 10px; background: #1abc9c; color: white; border: none; border-radius: 5px; cursor: pointer;">Add</button>
+        
+        <input type="number" id="examInput2" min="0" max="100" placeholder="Exam 2">
+        <button id="btnAddExam2" style="width: auto; padding: 0 10px; background: #1abc9c; color: white; border: none; border-radius: 5px; cursor: pointer;">Add</button>
+    </div>
+    <div class="score-list">Exams: <span id="examDisplay">None</span></div>
+</div>
+            
+            <div class="input-group">
+                <label>Add MCO Score (50%):</label>
+                <div style="display: flex; gap: 10px; margin-bottom: 5px;">
+                    <input type="number" id="mcoInput" min="0" max="100" placeholder="0-100">
+                    <button id="btnAddMCO" style="width: auto; padding: 0 15px; background: #1abc9c; color: white; border: none; border-radius: 5px; cursor: pointer;">Add</button>
+                </div>
+                <div class="score-list">MCOs: <span id="mcoDisplay">None</span></div>
+                <input type="hidden" id="mcoAverageValue" value="0">
+            </div>
+        </div>
+        
+        <div class="activity-grid">
+            <button id="btnCalculate">Calculate Grade</button>
+            <button id="btnReset">Reset</button>
+        </div>
+
+        <div class="result-display" style="margin-top: 20px; text-align: center;">
+            <p>Final Grade: <span id="finalGrade" class="highlight" style="font-weight: bold; color: var(--primary);">-</span></p>
+            <p>Grade Equivalent: <span id="gradeLetter" class="highlight" style="font-weight: bold; color: var(--primary);">-</span></p>
+        </div>
+    </div>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>

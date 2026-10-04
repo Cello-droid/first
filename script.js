@@ -57,19 +57,18 @@ document.addEventListener('DOMContentLoaded', () => {
     let examScores = [];
     let mcoScores = [];
 
-    const handleScoreAdd = (inputEl, array, displayEl, hiddenEl) => {
-        const score = parseFloat(inputEl.value);
-        if (!isNaN(score) && score >= 0 && score <= 100) {
-            array.push(score);
-            const average = array.reduce((a, b) => a + b, 0) / array.length;
-            displayEl.textContent = array.join(", ");
-            hiddenEl.value = average;
-            inputEl.value = "";
-            inputEl.focus();
-        } else {
-            alert("Please enter a valid score between 0 and 100.");
-        }
-    };
+    function handleAddScore(inputId, storageArray, displayId) {
+    const input = document.getElementById(inputId);
+    const score = parseFloat(input.value);
+
+    if (!isNaN(score) && score >= 0 && score <= 100) {
+        storageArray.push(score);
+        document.getElementById(displayId).innerText = storageArray.join(', ');
+        input.value = '';
+    } else {
+        alert("Please enter a valid score between 0 and 100.");
+    }
+}
 
     if(btnAddQuiz) btnAddQuiz.addEventListener('click', () => {
         handleScoreAdd(document.getElementById('quizInput'), quizScores, document.getElementById('quizDisplay'), document.getElementById('quizAverageValue'));
